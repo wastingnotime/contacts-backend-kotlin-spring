@@ -1,4 +1,4 @@
-FROM maven:3.6.3-openjdk-14-slim
+FROM maven:3.6.3-openjdk-14-slim AS build-env
 
 COPY ./pom.xml ./pom.xml
 RUN mvn dependency:go-offline -B
@@ -6,9 +6,15 @@ RUN mvn dependency:go-offline -B
 COPY ./src ./src
 RUN mvn package
 
-FROM openjdk:14-slim
-COPY --from=0 ./target/contacts-backend-kotlin-spring-0.0.1-SNAPSHOT.jar app.jar
+FROM openjdk:14-alpine
+WORKDIR /app
+
+COPY --from=build-env ./target/contacts-backend-kotlin-spring-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8010
+
+VOLUME data
+ENV url=jdbc:sqlite:/data/contacts.db
+
 CMD ["java","-jar","app.jar"]
 
 
