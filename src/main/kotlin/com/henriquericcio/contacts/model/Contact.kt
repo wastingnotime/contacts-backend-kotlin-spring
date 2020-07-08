@@ -1,4 +1,4 @@
-package com.henriquericcio.contacts
+package com.henriquericcio.contacts.model
 
 import java.util.*
 import javax.persistence.Entity
