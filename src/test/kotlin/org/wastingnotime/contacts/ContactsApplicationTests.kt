@@ -1,4 +1,4 @@
-package com.henriquericcio.contacts
+package org.wastingnotime.contacts
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

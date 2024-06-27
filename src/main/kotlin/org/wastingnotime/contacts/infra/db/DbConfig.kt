@@ -1,4 +1,4 @@
-package com.henriquericcio.contacts.infra.db
+package org.wastingnotime.contacts.infra.db
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
@@ -32,7 +32,7 @@ class DbConfig {
     fun entityManagerFactory(): LocalContainerEntityManagerFactoryBean {
         val em = LocalContainerEntityManagerFactoryBean()
         em.dataSource = dataSource()
-        em.setPackagesToScan(*arrayOf("com.henriquericcio.contacts.model"))
+        em.setPackagesToScan(*arrayOf("org.wastingnotime.contacts.model"))
         em.jpaVendorAdapter = HibernateJpaVendorAdapter()
         em.setJpaProperties(additionalProperties())
         return em
