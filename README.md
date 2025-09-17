@@ -70,3 +70,11 @@ curl --request GET \
   --url http://localhost:8010/contacts
 ```
 more examples and details about requests on (link) *to be defined
+
+
+## knowledge base
+
+### to upgrade maven wrapper
+```bash
+mvn -N wrapper:wrapper -Dmaven=3.9.11
+```
