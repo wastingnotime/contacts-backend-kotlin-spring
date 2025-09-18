@@ -3,7 +3,7 @@
 **contacts-backend-kotlin-spring** is part of "contacts" project that is an initiative where we try to explore frontend and backend implementations in order to better understand it cutting-edge features. This repository presents a kotlin rest API sample.
 
 ## stack
-* openjdk 17
+* openjdk 21
 * kotlin
 * spring
 * sqlite
